@@ -1,0 +1,141 @@
+club_id,club_name,league_id
+10,Arminia Bielefeld,L1
+1003,Leicester City,GB1
+1005,Unione Sportiva Lecce,IT1
+1010,Watford FC,GB1
+1025,Bologna Football Club 1909,IT1
+1031,Luton Town,GB1
+1032,Reading FC,GB1
+1038,UC Sampdoria,IT1
+1039,Queens Park Rangers,GB1
+1047,Calcio Como,IT1
+1049,Valencia Club de Fútbol S. A. D.,ES1
+105,SV Darmstadt 98,L1
+1050,Villarreal Club de Fútbol S.A.D.,ES1
+1071,Wigan Athletic,GB1
+1084,Málaga CF,ES1
+11,Arsenal Football Club,GB1
+1108,Deportivo Alavés S. A. D.,ES1
+1110,Huddersfield Town,GB1
+1123,Norwich City,GB1
+1132,Burnley Football Club,GB1
+1148,Brentford Football Club,GB1
+12,Associazione Sportiva Roma,IT1
+1210,US Livorno 1915,IT1
+12321,Girona Fútbol Club S. A. D.,ES1
+1237,Brighton and Hove Albion Football Club,GB1
+1244,CD Leganés,ES1
+127,SC Paderborn 07,L1
+13,Club Atlético de Madrid S.A.D.,ES1
+130,Parma Calcio 1913,IT1
+131,Futbol Club Barcelona,ES1
+1387,Siena FC,IT1
+1390,Cagliari Calcio,IT1
+142,Real Zaragoza,ES1
+1429,Cesena FC,IT1
+148,Tottenham Hotspur Football Club,GB1
+15,Bayer 04 Leverkusen Fußball,L1
+150,Real Betis Balompié S.A.D.,ES1
+1531,Elche Club de Fútbol S.A.D.,ES1
+1533,SD Eibar,ES1
+16,Borussia Dortmund,L1
+1627,Catania FC,IT1
+167,Fußball-Club Augsburg 1907,L1
+16795,Granada CF,ES1
+18,Borussia Verein für Leibesübungen 1900 Mönchengladbach,L1
+180,Southampton FC,GB1
+19,Brescia Calcio,IT1
+2036,1. Fußballclub Heidenheim 1846,L1
+2239,Unione Sportiva Cremonese S.p.A.,IT1
+2288,Swansea City,GB1
+23,Eintracht Braunschweig,L1
+237,Real Club Deportivo Mallorca S.A.D.,ES1
+23826,RasenBallsport Leipzig,L1
+24,Eintracht Frankfurt Fußball AG,L1
+2448,Sporting Gijón,ES1
+2497,Real Oviedo S.A.D.,ES1
+252,Genoa Cricket and Football Club,IT1
+2687,Cádiz CF,ES1
+269,Holstein Kiel,L1
+27,FC Bayern München,L1
+2722,SPAL,IT1
+276,Verona Hellas Football Club,IT1
+281,Manchester City Football Club,GB1
+289,Sunderland Association Football Club,GB1
+29,Everton Football Club,GB1
+2919,AC Monza,IT1
+2921,Delfino Pescara 1936,IT1
+3,1. Fußball-Club Köln,L1
+3008,Hull City,GB1
+31,Liverpool Football Club,GB1
+33,FC Schalke 04,L1
+3302,UD Almería,ES1
+331,Club Atlético Osasuna,ES1
+3368,Levante Unión Deportiva S.A.D.,ES1
+35,Fußball-Club St. Pauli von 1910,L1
+350,Sheffield United,GB1
+3522,Spezia Calcio,IT1
+366,Real Valladolid CF,ES1
+367,Rayo Vallecano de Madrid S. A. D.,ES1
+368,Sevilla Fútbol Club S.A.D.,ES1
+3709,Getafe Club de Fútbol S. A. D. Team Dubai,ES1
+379,West Ham United Football Club,GB1
+38,Fortuna Düsseldorf,L1
+380,US Salernitana 1919,IT1
+39,1. Fußball- und Sportverein Mainz 05,L1
+398,Società Sportiva Lazio S.p.A.,IT1
+399,Leeds United Association Football Club,GB1
+4,1.FC Nuremberg,L1
+405,Aston Villa Football Club,GB1
+4083,FC Crotone,IT1
+41,Hamburger Sport Verein,L1
+410,Udinese Calcio,IT1
+4102,AC Carpi,IT1
+416,Torino Calcio,IT1
+4171,Benevento Calcio,IT1
+4172,Pisa Sporting Club,IT1
+418,Real Madrid Club de Fútbol,ES1
+42,Hannover 96,L1
+430,Associazione Calcio Fiorentina,IT1
+44,Hertha BSC,L1
+458,Palermo FC,IT1
+46,Football Club Internazionale Milano S.p.A.,IT1
+472,UD Las Palmas,ES1
+4795,FC Ingolstadt 04,L1
+5,Associazione Calcio Milan,IT1
+506,Juventus Football Club,IT1
+512,Stoke City,GB1
+533,Turn- und Sportgemeinschaft 1899 Hoffenheim Fußball-Spielbetriebs,L1
+5358,SD Huesca,ES1
+543,Wolverhampton Wanderers Football Club,GB1
+60,Sport-Club Freiburg,L1
+603,Cardiff City,GB1
+607,Venezia FC,IT1
+6195,Società Sportiva Calcio Napoli,IT1
+621,Athletic Club Bilbao,ES1
+631,Chelsea Football Club,GB1
+641,Middlesbrough FC,GB1
+65,SpVgg Greuther Fürth,L1
+6574,Unione Sportiva Sassuolo Calcio,IT1
+677,Ipswich Town,GB1
+681,Real Sociedad de Fútbol S.A.D.,ES1
+703,Nottingham Forest Football Club,GB1
+714,Reial Club Deportiu Espanyol de Barcelona S.A.D.,ES1
+749,FC Empoli,IT1
+762,Newcastle United Football Club,GB1
+79,Verein für Bewegungsspiele Stuttgart 1893,L1
+80,VfL Bochum,L1
+800,Atalanta Bergamasca Calcio S.p.a.,IT1
+82,Verein für Leibesübungen Wolfsburg,L1
+86,Sportverein Werder Bremen von 1899,L1
+862,Chievo Verona,IT1
+873,Crystal Palace Football Club,GB1
+89,1. Fußballclub Union Berlin,L1
+897,Deportivo de La Coruña,ES1
+8970,Frosinone Calcio,IT1
+931,Fulham Football Club,GB1
+940,Real Club Celta de Vigo S. A. D.,ES1
+984,West Bromwich Albion,GB1
+985,Manchester United Football Club,GB1
+989,Association Football Club Bournemouth,GB1
+993,Córdoba CF,ES1

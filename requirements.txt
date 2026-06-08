@@ -3,3 +3,8 @@ requests
 python-dotenv
 streamlit-option-menu
 streamlit-aggrid
+ipykernel
+pandas
+fastapi
+sqlalchemy
+uvicorn
