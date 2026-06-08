@@ -8,3 +8,5 @@ pandas
 fastapi
 sqlalchemy
 uvicorn
+seaborn
+matplotlib
