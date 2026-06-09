@@ -1,4 +1,4 @@
-from fastapi import FastAPI, HttpException, status, Depends
+from fastapi import FastAPI, HTTPException, HttpException, status, Depends
 
 from sqlalchemy.orm import Session, sessionmaker, relationship
 from sqlalchemy import create_engine, Column, Integer, String, ForeignKey
@@ -17,6 +17,15 @@ def df_to_dict(path):
     return df.to_dict('records')
 
 app = FastAPI(title='Football Data API') 
+
+# Carga dinámica de modelos guardados
+MODELS_DIR = '../models/'
+loaded_models = {}
+for m_name, filename in [('Random Forest', 'random_forest_model.pkl'), ('XGBoost', 'xgboost_model.pkl')]:
+    path = os.path.join(MODELS_DIR, filename)
+    if os.path.exists(path):
+        loaded_models[m_name] = joblib.load(path)
+        print(f"✅ Modelo '{m_name}' cargado en el backend.")
 
 # Database setup
 engine = create_engine('sqlite:///fotball_data.db', connect_args={"check_same_thread": False})
@@ -68,6 +77,10 @@ class Club(BaseModel):
 class Player(BaseModel):
     pass
 
+
+class PredictRequest(BaseModel):
+    model_name: str
+    player_name: str
 
 def get_db():
     db = SessionLocal()
