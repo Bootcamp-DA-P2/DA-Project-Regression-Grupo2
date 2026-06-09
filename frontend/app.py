@@ -100,7 +100,11 @@ elif selected == 'Jugadores':
 
 
 
-    df_players = pd.read_csv('../data/raw/players.csv')
+    players = get_players()
+
+    df_players = pd.DataFrame(players)
+
+    df_players = df_players.drop(columns=['id', 'club_id'])
 
     gb = GridOptionsBuilder.from_dataframe(df_players)
 
