@@ -24,7 +24,6 @@ SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
 
 # Database models
-
 class Competition(Base):
     __tablename__ = 'competitions'
     id = Column(Integer, primary_key=True, nullable=False, index=True)
@@ -52,10 +51,10 @@ class Player(Base):
     club_id = Column(Integer, ForeignKey('clubs.id'), nullable=False)
     club = relationship("Club", back_populates="players")
 
+
 Base.metadata.create_all(engine)
 
 # Pydantic Models (Dataclass)
-
 class Competition(BaseModel):
     id: str
     name: str
@@ -66,7 +65,19 @@ class Club(BaseModel):
     league_id: str
 
 class Player(BaseModel):
-    pass
+    player_id: int
+    name: str
+    current_club_id: int
+    country_of_birth: str
+    date_of_birth: str
+    position: str
+    height_in_cm: int
+    contract_expiration_date: str
+    current_national_team_id: int
+    current_club_domestic_competition_id: str
+    current_club_name: str
+    market_value_in_eur: int
+    highest_market_value_in_eur: int
 
 
 def get_db():
