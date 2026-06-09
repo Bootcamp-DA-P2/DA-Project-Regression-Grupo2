@@ -10,3 +10,7 @@ sqlalchemy
 uvicorn
 seaborn
 matplotlib
+joblib
+xgboost
+sklearn.model_selection
+sklearn.ensemble
