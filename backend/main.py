@@ -1,4 +1,4 @@
-from fastapi import FastAPI, HttpException, status, Depends
+from fastapi import FastAPI, HTTPException, status, Depends
 
 from sqlalchemy.orm import Session, sessionmaker, relationship
 from sqlalchemy import create_engine, Column, Integer, String, ForeignKey
@@ -10,11 +10,17 @@ import pandas as pd
 
 import os
 
+# Comando para lanzar el backend desde la carpeta backend
+# uvicorn main:app --reload
+
 def df_to_dict(path):
-    df = pd.read_csv(path)
-    if not os.path.exists(path):
-        raise FileNotFoundError(f"File {path} not found.")
-    return df.to_dict('records')
+    try:
+        df = pd.read_csv(path)
+        if not os.path.exists(path):
+            raise FileNotFoundError(f"File {path} not found.")
+        return df.to_dict('records')
+    except Exception as e:
+        raise Exception(f'Error: {e}')
 
 app = FastAPI(title='Football Data API') 
 
@@ -24,61 +30,77 @@ SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
 
 # Database models
-class Competition(Base):
+class CompetitionORM(Base):
     __tablename__ = 'competitions'
-    id = Column(Integer, primary_key=True, nullable=False, index=True)
+    id = Column(String, primary_key=True, nullable=False, index=True)
     name = Column(String, unique=True, index=True)
 
-    clubs = relationship("Club", back_populates="competition")
+    clubs = relationship("ClubORM", back_populates="competition")
+    players = relationship("PlayerORM", back_populates="competition")
 
-class Club(Base):
+class ClubORM(Base):
     __tablename__ = 'clubs'
     id = Column(Integer, primary_key=True, nullable=False, index=True)
     club_name = Column(String, unique=True, nullable=False, index=True)
-
     league_id = Column(Integer, ForeignKey('competitions.id'), nullable=False)
-    competition = relationship("Competition", back_populates="clubs")
 
-class Player(Base):
+    competition = relationship("CompetitionORM", back_populates="clubs")
+    players = relationship("PlayerORM", back_populates="club")
+
+
+class PlayerORM(Base):
     __tablename__ = 'players'
     id = Column(Integer, primary_key=True, nullable=False, index=True)
     name = Column(String, nullable=False, index=True)
     position = Column(String, nullable=False, index=True)
+    last_season = Column(Integer, nullable=False)
+    country_of_birth = Column(String, nullable=False)
+    age = Column(Integer, nullable=False)
+    position = Column(String, nullable=False)
+    height_in_cm = Column(String, nullable=False)
+    club_name = Column(String, nullable=False)
+    market_value_in_eur = Column(Integer, nullable=False)
 
     league_id = Column(Integer, ForeignKey('competitions.id'), nullable=False)
-    competition = relationship("Competition", back_populates="players")
+    competition = relationship("CompetitionORM", back_populates="players")
 
     club_id = Column(Integer, ForeignKey('clubs.id'), nullable=False)
-    club = relationship("Club", back_populates="players")
+    club = relationship("ClubORM", back_populates="players")
 
 
 Base.metadata.create_all(engine)
 
-# Pydantic Models (Dataclass)
-class Competition(BaseModel):
-    id: str
+# Pydantic Schemas (Dataclass)
+class CompetitionSchema(BaseModel):
+    id:   str
     name: str
 
-class Club(BaseModel):
-    id: int
+    class Config:
+        from_attributes = True
+
+class ClubSchema(BaseModel):
+    id:        int
     club_name: str
-    league_id: str
+    league_id: int
 
-class Player(BaseModel):
-    player_id: int
-    name: str
-    current_club_id: int
-    country_of_birth: str
-    date_of_birth: str
-    position: str
-    height_in_cm: int
-    contract_expiration_date: str
-    current_national_team_id: int
-    current_club_domestic_competition_id: str
-    current_club_name: str
+    class Config:
+        from_attributes = True
+
+class PlayerSchema(BaseModel):
+    id:                  int
+    name:                str
+    last_season:         int
+    club_id:             int
+    country_of_birth:    str
+    age:                 int
+    position:            str
+    height_in_cm:        str
+    league_id:           int
+    club_name:           str
     market_value_in_eur: int
-    highest_market_value_in_eur: int
 
+    class Config:
+        from_attributes = True
 
 def get_db():
     db = SessionLocal()
@@ -87,62 +109,73 @@ def get_db():
     finally:
         db.close()
 
-get_db()
+
 
 # Endpoints
 @app.get("/competitions/")
 def get_competitions(db: Session = Depends(get_db)):
-    competitions = db.query(Competition).all()
+    competitions = db.query(CompetitionORM).all()
     if not competitions:
-        raise HttpException(status_code=status.HTTP_404_NOT_FOUND, detail="No competitions found")
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="No competitions found")
     return competitions
 
 @app.post("/competitions/")
-def create_competition(db: Session = Depends(get_db)):
+def create_competition(csv_path= "../data/clean/competitions_clean.csv", db: Session = Depends(get_db)):
     try:
-        competitions = df_to_dict('../data/clean/competitions.csv')
+        competitions = df_to_dict(csv_path)
         for competition in competitions:
-            db_competition = Competition(id=competition['id'], name=competition['name'])
+            db_competition = CompetitionORM(id=competition['competition_id'], name=competition['name'])
             db.add(db_competition)
         db.commit()
         return {"message": "Competitions created successfully"}
     except FileNotFoundError as e:
-        raise HttpException(status_code=status.HTTP_404_NOT_FOUND, detail=str(e))
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=str(e))
 
 @app.get("/clubs/")
 def get_clubs(db: Session = Depends(get_db)):
-    clubs = db.query(Club).all()
+    clubs = db.query(ClubORM).all()
     if not clubs:
-        raise HttpException(status_code=status.HTTP_404_NOT_FOUND, detail="No clubs found")
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="No clubs found")
     return clubs
 
 @app.post("/clubs/")
-def create_clubs(db: Session = Depends(get_db)):
+def create_clubs(csv_path: str = "../data/clean/clubs_clean.csv",db: Session = Depends(get_db)):
     try:
-        clubs = df_to_dict('../data/clean/clubs.csv')
+        clubs = df_to_dict(csv_path)
         for club in clubs:
-            db_club = Club(id=club['id'], club_name=club['club_name'], league_id=club['league_id'])
+            db_club = ClubORM(id=club['club_id'], club_name=club['club_name'], league_id=club['league_id'])
             db.add(db_club)
         db.commit()
         return {"message": "Clubs created successfully"}
     except FileNotFoundError as e:
-        raise HttpException(status_code=status.HTTP_404_NOT_FOUND, detail=str(e))
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=str(e))
 
 @app.get("/players/")
 def get_players(db: Session = Depends(get_db)):
-    players = db.query(Player).all()
+    players = db.query(PlayerORM).all()
     if not players:
-        raise HttpException(status_code=status.HTTP_404_NOT_FOUND, detail="No players found")
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="No players found")
     return players
 
 @app.post("/players/")
 def create_players(db: Session = Depends(get_db)):
     try:
-        players = df_to_dict('../data/clean/players.csv')
+        players = df_to_dict('../data/clean/players_clean.csv')
         for player in players:
-            db_player = Player(id=player['id'], name=player['name'], position=player['position'])
-            db.add(db_player)
+            db.add(PlayerORM(
+                id                  = player["player_id"],
+                name                = player["name"],
+                position            = player["position"],
+                last_season         = player["last_season"],
+                country_of_birth    = player["country_of_birth"],
+                age                 = player["age"],
+                height_in_cm        = player["height_in_cm"],
+                club_name           = player["club_name"],
+                market_value_in_eur = player["market_value_in_eur"],
+                league_id           = player["league_id"],
+                club_id             = player["club_id"]
+            ))
         db.commit()
         return {"message": "Players created successfully"}
     except FileNotFoundError as e:
-        raise HttpException(status_code=status.HTTP_404_NOT_FOUND, detail=str(e))
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=str(e))
