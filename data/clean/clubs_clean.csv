@@ -2,8 +2,13 @@ club_id,club_name,league_id
 10,Arminia Bielefeld,L1
 1003,Leicester City,GB1
 1005,Unione Sportiva Lecce,IT1
+10090,Asociación Deportivo Pasto,COL1
+10093,Independiente Medellín,COL1
 1010,Watford FC,GB1
+1022,Cerezo Osaka,JAP1
 1025,Bologna Football Club 1909,IT1
+1029,Club Atlético Vélez Sársfield,ARG1
+1030,Asociación Atlética Argentinos Juniors,ARG1
 1031,Luton Town,GB1
 1032,Reading FC,GB1
 1038,UC Sampdoria,IT1
@@ -12,27 +17,49 @@ club_id,club_name,league_id
 1049,Valencia Club de Fútbol S. A. D.,ES1
 105,SV Darmstadt 98,L1
 1050,Villarreal Club de Fútbol S.A.D.,ES1
+10503,Deportes Tolima,COL1
+10511,CA San Martín (San Juan),ARG1
+1062,S-Pulse,JAP1
+1066,Nagoya Grampus Eight,JAP1
 1071,Wigan Athletic,GB1
 1084,Málaga CF,ES1
 11,Arsenal Football Club,GB1
+1106,Club de Gimnasia y Esgrima La Plata,ARG1
 1108,Deportivo Alavés S. A. D.,ES1
 1110,Huddersfield Town,GB1
 1123,Norwich City,GB1
 1132,Burnley Football Club,GB1
 1148,Brentford Football Club,GB1
+11648,Independiente Santa Fe,COL1
+11831,Club Atlético Tigre,ARG1
+118373,Auckland Football Club,AUS1
+11854,Junior FC,COL1
 12,Associazione Sportiva Roma,IT1
 1210,US Livorno 1915,IT1
+12179,Club Sportivo Independiente Rivadavia,ARG1
+12301,Club Atlético Aldosivi,ARG1
 12321,Girona Fútbol Club S. A. D.,ES1
+1234,Club Atlético Independiente de Avellaneda,ARG1
 1237,Brighton and Hove Albion Football Club,GB1
 1244,CD Leganés,ES1
+12454,Club Atlético Sarmiento,ARG1
+12574,CD Godoy Cruz Antonio Tomba,ARG1
 127,SC Paderborn 07,L1
+1286,Club Atlético Newell’s Old Boys,ARG1
 13,Club Atlético de Madrid S.A.D.,ES1
 130,Parma Calcio 1913,IT1
 131,Futbol Club Barcelona,ES1
 1387,Siena FC,IT1
 1390,Cagliari Calcio,IT1
+1418,Club Atlético Rosario Central,ARG1
 142,Real Zaragoza,ES1
 1429,Cesena FC,IT1
+1444,Racing Club Asociación Civil de Avellaneda,ARG1
+14554,Club Atlético Tucumán,ARG1
+14602,Asociación Atlética Estudiantes,ARG1
+14649,Boyacá Chicó FC,COL1
+14680,Unión Magdalena,COL1
+14687,Club Atlético Gimnasia y Esgrima de Mendoza,ARG1
 148,Tottenham Hotspur Football Club,GB1
 15,Bayer 04 Leverkusen Fußball,L1
 150,Real Betis Balompié S.A.D.,ES1
@@ -42,25 +69,47 @@ club_id,club_name,league_id
 1627,Catania FC,IT1
 167,Fußball-Club Augsburg 1907,L1
 16795,Granada CF,ES1
+17425,Internacional de Bogotá,COL1
+1775,Club Atlético San Lorenzo de Almagro,ARG1
 18,Borussia Verein für Leibesübungen 1900 Mönchengladbach,L1
 180,Southampton FC,GB1
+1829,Instituto Atlético Central Córdoba,ARG1
+189,Club Atlético Boca Juniors,ARG1
 19,Brescia Calcio,IT1
+19775,Asociación de Fomento Deportivo Riestra Barrio Colón,ARG1
 2036,1. Fußballclub Heidenheim 1846,L1
+20590,Rionegro Águilas,COL1
+2063,Club Atlético Huracán,ARG1
+209,Club Atlético River Plate,ARG1
+21975,Football Club Mito HollyHock,JAP1
+22171,Fagiano Okayama Sports Club,JAP1
 2239,Unione Sportiva Cremonese S.p.A.,IT1
+2241,Kashima Antlers FC,JAP1
 2288,Swansea City,GB1
+22902,Alianza FC,COL1
 23,Eintracht Braunschweig,L1
+2350,Millonarios FC,COL1
+2352,CD América de Cali,COL1
+23568,Zelvia,JAP1
+23581,V-Varen Nagasaki,JAP1
 237,Real Club Deportivo Mallorca S.A.D.,ES1
 23826,RasenBallsport Leipzig,L1
 24,Eintracht Frankfurt Fußball AG,L1
+2402,Club Social y Deportivo Defensa y Justicia,ARG1
+2417,Club Atlético Belgrano,ARG1
 2448,Sporting Gijón,ES1
 2497,Real Oviedo S.A.D.,ES1
+25184,Club Atlético Barracas Central,ARG1
 252,Genoa Cricket and Football Club,IT1
+25580,Melbourne City Football Club,AUS1
 2687,Cádiz CF,ES1
 269,Holstein Kiel,L1
+2697,Sanfrecce Hiroshima,JAP1
 27,FC Bayern München,L1
 2722,SPAL,IT1
 276,Verona Hellas Football Club,IT1
 281,Manchester City Football Club,GB1
+288,Club Estudiantes de La Plata,ARG1
 289,Sunderland Association Football Club,GB1
 29,Everton Football Club,GB1
 2919,AC Monza,IT1
@@ -68,21 +117,30 @@ club_id,club_name,league_id
 3,1. Fußball-Club Köln,L1
 3008,Hull City,GB1
 31,Liverpool Football Club,GB1
+31284,Club Atlético Central Córdoba,ARG1
+32041,Fortaleza CEIF,COL1
 33,FC Schalke 04,L1
 3302,UD Almería,ES1
 331,Club Atlético Osasuna,ES1
+333,Club Atlético Lanús,ARG1
 3368,Levante Unión Deportiva S.A.D.,ES1
 35,Fußball-Club St. Pauli von 1910,L1
 350,Sheffield United,GB1
 3522,Spezia Calcio,IT1
+36100,Western Sydney Wanderers,AUS1
 366,Real Valladolid CF,ES1
 367,Rayo Vallecano de Madrid S. A. D.,ES1
 368,Sevilla Fútbol Club S.A.D.,ES1
 3709,Getafe Club de Fútbol S. A. D. Team Dubai,ES1
+3734,Tokyo Verdy,JAP1
 379,West Ham United Football Club,GB1
 38,Fortuna Düsseldorf,L1
 380,US Salernitana 1919,IT1
+3828,Yokohama Marinos,JAP1
+38628,Llaneros FC,COL1
 39,1. Fußball- und Sportverein Mainz 05,L1
+3938,Club Atlético Talleres,ARG1
+3958,Rakuten Vissel Kobe,JAP1
 398,Società Sportiva Lazio S.p.A.,IT1
 399,Leeds United Association Football Club,GB1
 4,1.FC Nuremberg,L1
@@ -108,6 +166,9 @@ club_id,club_name,league_id
 533,Turn- und Sportgemeinschaft 1899 Hoffenheim Fußball-Spielbetriebs,L1
 5358,SD Huesca,ES1
 543,Wolverhampton Wanderers Football Club,GB1
+5551,Newcastle United Jets Football Club,AUS1
+593,Kyoto Purple Sanga,JAP1
+596,Gamba Osaka,JAP1
 60,Sport-Club Freiburg,L1
 603,Cardiff City,GB1
 607,Venezia FC,IT1
@@ -115,27 +176,54 @@ club_id,club_name,league_id
 621,Athletic Club Bilbao,ES1
 631,Chelsea Football Club,GB1
 641,Middlesbrough FC,GB1
+6495,Atlético Bucaramanga,COL1
 65,SpVgg Greuther Fürth,L1
 6574,Unione Sportiva Sassuolo Calcio,IT1
+6631,Tokyo Football Club,JAP1
+6632,Hitachi Kashiwa Reysol,JAP1
+672,JEF United,JAP1
 677,Ipswich Town,GB1
 681,Real Sociedad de Fútbol S.A.D.,ES1
+6954,Central Coast Mariners Football Club,AUS1
+6984,Once Caldas,COL1
+7006,Melbourne Victory FC,AUS1
 703,Nottingham Forest Football Club,GB1
+7097,Club Atlético Unión,ARG1
+71084,Western United FC,AUS1
+71085,Macarthur South West Sydney (A-League),AUS1
+7136,Envigado FC,COL1
 714,Reial Club Deportiu Espanyol de Barcelona S.A.D.,ES1
 749,FC Empoli,IT1
 762,Newcastle United Football Club,GB1
+7831,Brisbane Roar FC,AUS1
 79,Verein für Bewegungsspiele Stuttgart 1893,L1
 80,VfL Bochum,L1
 800,Atalanta Bergamasca Calcio S.p.a.,IT1
+8054,Sydney Football Club,AUS1
+8172,Atlético Nacional,COL1
 82,Verein für Leibesübungen Wolfsburg,L1
+828,Urawa Red Diamonds,JAP1
+830,Club Atlético Banfield,ARG1
+8344,Albirex Niigata,JAP1
+8445,Wellington Phoenix Football Club,AUS1
+8457,Shonan Bellmare,JAP1
 86,Sportverein Werder Bremen von 1899,L1
 862,Chievo Verona,IT1
 873,Crystal Palace Football Club,GB1
+875,Adelaide United Football Club,AUS1
 89,1. Fußballclub Union Berlin,L1
 897,Deportivo de La Coruña,ES1
 8970,Frosinone Calcio,IT1
+928,Club Atlético Platense,ARG1
 931,Fulham Football Club,GB1
 940,Real Club Celta de Vigo S. A. D.,ES1
+943,Yokohama FC,JAP1
+9597,Avispa Fukuoka,JAP1
+9598,Kawasaki Frontale,JAP1
+970,Perth Glory Football Club,AUS1
+9811,Deportivo Pereira,COL1
 984,West Bromwich Albion,GB1
 985,Manchester United Football Club,GB1
 989,Association Football Club Bournemouth,GB1
 993,Córdoba CF,ES1
+9961,Deportivo Cali,COL1
