@@ -13,7 +13,7 @@ import os
 def cargar_modelo(nombre_modelo):
     modelos_archivos = {
         'Regresión Lineal': 'linear_regression_model.pkl',
-        'K-NN': 'knn_model.pkl',
+        'K-NN': 'knn_regressor_model.pkl',
         'XGBoost' : 'xgboost_model.pkl'
     }
     archivo = modelos_archivos.get(nombre_modelo)
@@ -56,7 +56,7 @@ if selected == 'Predicciones':
         with col1:
             modelo_selected = st.selectbox(
                 'Modelo de predicción', 
-                options=['Regresión Lineal', 'K-NN', 'Random Forest', 'XGBoost'],
+                options=['Regresión Lineal', 'K-NN', 'XGBoost'],
                 index=0
             )
         with col2:
